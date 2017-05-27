@@ -1,0 +1,210 @@
+@(lines: List[Commodity],current_user:String)
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>首页</title>
+<link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="@routes.Assets.at("javascripts/jquery.min.js")"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="@routes.Assets.at("stylesheets/style.css")" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<!-- start menu -->
+<link href="@routes.Assets.at("stylesheets/memenu.css")" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="@routes.Assets.at("javascripts/memenu.js")"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script src="@routes.Assets.at("javascripts/simpleCart.min.js")"> </script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+			<div class="search">
+					<form>
+						<input type="text" value="Search " onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}">
+						<input type="submit" value="Go">
+					</form>
+			</div>
+			<div class="header-left">
+					<ul>
+					@if(current_user=="登录"){<li ><a href="/login"  >登录</a></li><li><a  href="/register"  >注册</a></li>}else{<li ><a href="#"  >@current_user</a></li>}
+						
+
+					</ul>
+					<div class="cart box_1">
+						<a href="/checkout">
+						<h3> <div class="total">购物车</div>
+							<img src="@routes.Assets.at("images/cart.png")" alt=""/></h3>
+						</a>
+						<!-- <p><a href="javascript:;" class="simpleCart_empty">清空购物车</a></p> -->
+
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				<div class="logo">
+					<a href="/"><img src="@routes.Assets.at("images/logo.png")" alt=""></a>
+				</div>
+		  <div class=" h_menu4">
+				<ul class="memenu skyblue">
+					<li class="active grid"><a class="color8" href="/">主页</a></li>
+
+				  <li><a class="color4" href="/blog">帖子</a></li>
+				  @if(current_user.indexOf("商家") != -1 || current_user.indexOf("管理员") != -1){
+				  <li><a class="color6" href="/@if(current_user.indexOf("管理员") == -1){business}else{admin}">个人中心</a></li>
+				  }else{}
+			  </ul>
+			</div>
+
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+
+	</div>
+
+	<div class="banner">
+		<div class="container">
+			  <script src="@routes.Assets.at("javascripts/responsiveslides.min.js")"></script>
+  <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+			<div  id="top" class="callbacks_container">
+			<ul class="rslides" id="slider">
+			    <li>
+
+						<div class="banner-text">
+							<h3>华伦天奴西服 </h3>
+						<p>时间成就经典，岁月铸造永恒</p>
+
+						</div>
+
+				</li>
+				<li>
+
+						<div class="banner-text">
+							<h3>爱登堡服装 </h3>
+						<p>男人简单就好！</p>
+
+
+						</div>
+
+				</li>
+				<li>
+						<div class="banner-text">
+							<h3>雪梦莱牌服装</h3>
+						<p>潇潇洒洒雪梦莱，“一年半载”有风采！</p>
+						</div>
+
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	</div>
+<!--content-->
+<div class="content">
+	<div class="container">
+	<div class="content-top">
+		<h1>新品发布</h1>
+		<div class="grid-in">
+		    @for(line <- lines){
+			<div class="col-md-4 grid-top">
+				<a href="/item?id=@line.commodityId" class="b-link-stripe b-animate-go  thickbox"><img style="height:300px" class="img-responsive" src="@routes.Assets.at("uploads/commodity_")@line.commodityId" alt="">
+							<div class="b-wrapper">
+									<h3 class="b-animate b-from-left    b-delay03 ">
+										<span>@line.commodityName</span>
+									</h3>
+								</div>
+				</a>
+
+
+			<p><a href="/item?id=@line.commodityId">@line.commodityName</a></p>
+			</div>
+			}
+
+
+					<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!----->
+
+	<div class="content-top-bottom">
+		<h2>特色商品</h2>
+		<div class="col-md-6 men">
+			<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="@routes.Assets.at("images/t1.jpg")" alt="">
+				<div class="b-wrapper">
+									<h3 class="b-animate b-from-top top-in   b-delay03 ">
+										<span>女鞋</span>
+									</h3>
+								</div>
+			</a>
+
+
+		</div>
+		<div class="col-md-6">
+			<div class="col-md1 ">
+				<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="@routes.Assets.at("images/t2.jpg")" alt="">
+					<div class="b-wrapper">
+									<h3 class="b-animate b-from-top top-in1   b-delay03 ">
+										<span>行李箱</span>
+									</h3>
+								</div>
+				</a>
+
+			</div>
+			<div class="col-md2">
+				<div class="col-md-6 men1">
+					<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="@routes.Assets.at("images/t3.jpg")" alt="">
+							<div class="b-wrapper">
+									<h3 class="b-animate b-from-top top-in2   b-delay03 ">
+										<span>领带</span>
+									</h3>
+								</div>
+					</a>
+
+				</div>
+				<div class="col-md-6 men2">
+					<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="@routes.Assets.at("images/t4.jpg")" alt="">
+							<div class="b-wrapper">
+									<h3 class="b-animate b-from-top top-in2   b-delay03 ">
+										<span>男鞋</span>
+									</h3>
+								</div>
+					</a>
+
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	</div>
+</div>
+<div class="footer" style="margin-top:40px;">
+		<div class="footer-class">
+		<p >Copyright &copy; 2017</p>
+		</div>
+</div>
+</body>
+</html>

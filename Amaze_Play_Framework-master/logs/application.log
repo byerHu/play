@@ -1,0 +1,9 @@
+2017-05-27 17:45:48,813 - [INFO] - from play in pool-4-thread-1 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2017-05-27 17:47:15,584 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://127.0.0.1:3306/amaze
+
+2017-05-27 17:47:16,316 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+

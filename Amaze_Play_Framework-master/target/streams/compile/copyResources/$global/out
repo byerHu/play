@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/byer/haha/Amaze_Play_Framework-master/conf/evolutions,/home/byer/haha/Amaze_Play_Framework-master/target/scala-2.10/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/home/byer/haha/Amaze_Play_Framework-master/conf/routes,/home/byer/haha/Amaze_Play_Framework-master/target/scala-2.10/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/byer/haha/Amaze_Play_Framework-master/conf/application.conf,/home/byer/haha/Amaze_Play_Framework-master/target/scala-2.10/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/byer/haha/Amaze_Play_Framework-master/conf/evolutions/default,/home/byer/haha/Amaze_Play_Framework-master/target/scala-2.10/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/home/byer/haha/Amaze_Play_Framework-master/conf/evolutions/default/1.sql,/home/byer/haha/Amaze_Play_Framework-master/target/scala-2.10/classes/evolutions/default/1.sql)[0m

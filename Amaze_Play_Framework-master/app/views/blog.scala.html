@@ -1,0 +1,120 @@
+@(lines: List[Paper],current_user:String)
+<!DOCTYPE html>
+<html>
+<head>
+<title>帖子</title>
+<link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="@routes.Assets.at("javascripts/jquery.min.js")"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="@routes.Assets.at("stylesheets/style.css")" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<!-- start menu -->
+<link href="@routes.Assets.at("stylesheets/memenu.css")" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="@routes.Assets.at("javascripts/memenu.js")"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script src="@routes.Assets.at("javascripts/simpleCart.min.js")"> </script>
+
+</head>
+<body>
+<!--header-->
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+			<div class="search">
+					<form>
+						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+						<input type="submit" value="Go">
+					</form>
+			</div>
+		<div class="header-left">
+					<ul>
+@if(current_user=="登录"){<li ><a href="/login"  >登录</a></li><li><a  href="/register"  >注册</a></li>}else{<li ><a href="#"  >@current_user</a></li>}
+
+					</ul>
+					<div class="cart box_1">
+						<a href="/checkout">
+						<h3> <div class="total">购物车</div>
+							<img src="@routes.Assets.at("images/cart.png")" alt=""/></h3>
+						</a>
+						<!-- <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
+
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				<div class="logo">
+					<a href="/"><img src="@routes.Assets.at("images/logo.png")" alt=""></a>
+				</div>
+		  <div class=" h_menu4">
+				<ul class="memenu skyblue">
+					  <li class="active grid"><a class="color8" href="/">首页</a></li>
+				      <li><a class="color1" href="/bussiness">店铺管理</a></li>
+				<li><a class="color4" href="/blog">所有帖子</a></li>
+				<!-- <li><a class="color6" href="/contact">个人中心</a></li> -->
+			  </ul>
+			</div>
+
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+
+	</div>
+<!--content-->
+<div class="blog">
+<div class="container">
+	<h1>所有帖子</h1>
+				<div class="button" style="margin-bottom:20px;"><a href="/blog_single">发帖</a></div>
+
+				@for(line <- lines){
+					<div class="blog-top">
+				  <div class="col-md-6 grid_3">
+						<h3><a href="blog_single.html">@line.title</a></h3>
+						<!-- <a href="blog_single.html"><img src="images/b1.jpg" class="img-responsive" alt=""/></a> -->
+
+						<div class="blog-poast-info">
+							<ul>
+								<li><a class="admin" href="#"><i> </i> @line.author </a></li>
+								<li><span><i class="date"> </i>@line.time</span></li>
+							</ul>
+					    </div>
+						<p>@line.content</p>
+						<!-- <div class="button"><a href="#">查看全文</a></div> -->
+					</div>
+
+					<!-- <div class="clearfix"> </div> -->
+				  </div>
+				}
+</div>
+</div>
+
+<script type="text/javascript">
+		$(document).ready(function () {
+			console.log("haha");
+			// $.ajax({
+			// 		url:"/issue",
+			// 		success:function (data) {
+			// 			console.log(data);
+			// 		}
+			// })
+		})
+</script>
+<!--//content-->
+<div class="footer">
+		<div class="footer-class">
+		<p >Copyright &copy; 2017</p>
+		</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+GET     /register                   controllers.Application.register()
+    
+POST    /register                   controllers.Application.postregister()
+
+GET     /login                      controllers.Application.login()
+    
+POST     /login                     controllers.Application.postlogin()
+
+GET     /item                       controllers.Application.item(id: Int ?= 0)
+
+GET     /edititem                  controllers.Application.edititem(id: Int ?= 0)
+
+POST     /postedititem/:id                controllers.Application.postedititem(id: Int)
+
+GET     /delitem                    controllers.Application.delitem(id: Int)
+
+POST     /item                      controllers.Application.postitem()
+
+GET     /blog                      controllers.Application.issue()
+    
+POST    /issue                      controllers.Application.postissue()
+
+GET 	/business                   controllers.Application.business()
+
+POST    /business			 		controllers.Application.postbusiness()
+
+POST    /discuss			 		controllers.Application.postdiscuss()
+
+GET      /pass                      controllers.Application.pass(id: Int)
+
+GET      /addcart                      controllers.Application.addcart(id: Int,num:Int ?= 1)
+
+GET      /checkout                      controllers.Application.cart()
+
+GET      /delcart                      controllers.Application.delcart(id: Int)
+
+GET     /admin                      controllers.Application.admin()
+
+GET     /blog_single                controllers.Application.editissue()
+
+GET     /buy                        controllers.Application.buy()
+
+GET      /deluser                      controllers.Application.deluser(username: String)
+
+GET     /delapply                   controllers.Application.delapply(id: Int)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

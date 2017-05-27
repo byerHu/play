@@ -1,0 +1,276 @@
+@(current_user:String)
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="@routes.Assets.at("javascripts/jquery.min.js")"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="@routes.Assets.at("stylesheets/style.css")" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<!-- start menu -->
+<link href="@routes.Assets.at("stylesheets/memenu.css")" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="@routes.Assets.at("javascripts/memenu.js")"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script src="@routes.Assets.at("javascripts/simpleCart.min.js")"> </script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+			<div class="search">
+					<form>
+						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+						<input type="submit" value="Go">
+					</form>
+			</div>
+			<div class="header-left">
+					<ul>
+@if(current_user=="登录"){<li ><a href="/login"  >登录</a></li><li><a  href="/register"  >注册</a></li>}else{<li ><a href="#"  >@current_user</a></li>}
+					</ul>
+					<div class="cart box_1">
+						<a href="/checkout">
+						<h3> <div class="total">
+							购物车</div>
+							<img src="@routes.Assets.at("images/cart.png")" alt=""/></h3>
+						</a>
+												<!-- <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
+
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				<div class="logo">
+					<a href="/"><img src="@routes.Assets.at("images/logo.png")" alt=""></a>
+				</div>
+		  <div class=" h_menu4">
+					<ul class="memenu skyblue">
+					  <li class="active grid"><a class="color8" href="/">首页</a></li>
+				      <li><a class="color1" href="#">店铺管理</a>
+				      	<!-- <div class="mepanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<ul>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Bags</a></li>
+										<li><a href="products.html">Caps & Hats</a></li>
+										<li><a href="products.html">Hoodies & Sweatshirts</a></li>
+										<li><a href="products.html">Jackets & Coats</a></li>
+										<li><a href="products.html">Jeans</a></li>
+										<li><a href="products.html">Jewellery</a></li>
+										<li><a href="products.html">Jumpers & Cardigans</a></li>
+										<li><a href="products.html">Leather Jackets</a></li>
+										<li><a href="products.html">Long Sleeve T-Shirts</a></li>
+										<li><a href="products.html">Loungewear</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<ul>
+										<li><a href="products.html">Shirts</a></li>
+										<li><a href="products.html">Shoes, Boots & Trainers</a></li>
+										<li><a href="products.html">Shorts</a></li>
+										<li><a href="products.html">Suits & Blazers</a></li>
+										<li><a href="products.html">Sunglasses</a></li>
+										<li><a href="products.html">Sweatpants</a></li>
+										<li><a href="products.html">Swimwear</a></li>
+										<li><a href="products.html">Trousers & Chinos</a></li>
+										<li><a href="products.html">T-Shirts</a></li>
+										<li><a href="products.html">Underwear & Socks</a></li>
+										<li><a href="products.html">Vests</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>
+								</div>
+							</div>
+						  </div>
+						</div> -->
+					</li>
+				    <li class="grid"><a class="color2" href="#">	后台管理</a>
+					  	<!-- <div class="mepanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<ul>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Bags</a></li>
+										<li><a href="products.html">Caps & Hats</a></li>
+										<li><a href="products.html">Hoodies & Sweatshirts</a></li>
+										<li><a href="products.html">Jackets & Coats</a></li>
+										<li><a href="products.html">Jeans</a></li>
+										<li><a href="products.html">Jewellery</a></li>
+										<li><a href="products.html">Jumpers & Cardigans</a></li>
+										<li><a href="products.html">Leather Jackets</a></li>
+										<li><a href="products.html">Long Sleeve T-Shirts</a></li>
+										<li><a href="products.html">Loungewear</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<ul>
+										<li><a href="products.html">Shirts</a></li>
+										<li><a href="products.html">Shoes, Boots & Trainers</a></li>
+										<li><a href="products.html">Shorts</a></li>
+										<li><a href="products.html">Suits & Blazers</a></li>
+										<li><a href="products.html">Sunglasses</a></li>
+										<li><a href="products.html">Sweatpants</a></li>
+										<li><a href="products.html">Swimwear</a></li>
+										<li><a href="products.html">Trousers & Chinos</a></li>
+										<li><a href="products.html">T-Shirts</a></li>
+										<li><a href="products.html">Underwear & Socks</a></li>
+										<li><a href="products.html">Vests</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>
+								</div>
+							</div>
+						  </div>
+						</div> -->
+			    </li>
+				<li><a class="color4" href="/blog">所有帖子</a></li>
+				<!-- <li><a class="color6" href="/contact">个人中心</a></li> -->
+			  </ul>
+			</div>
+
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+
+	</div>
+
+
+<!--content-->
+<div class=" container">
+<div class=" register">
+	<h1>注册</h1>
+		  	  <form>
+				 <div class="col-md-6 register-top-grid">
+					<h3>个人信息</h3>
+					 <div>
+						<span>账号</span>
+						<input type="text" name="username" id="username">
+					 </div>
+					 <div>
+						<span>申请认证</span>
+						<!-- <input type="text"> -->
+						<select class="" name="" id="supple" style="width:540px;height:50px;background-color:#fff;margin-top:15px;">
+							<option value="1">会员</option>
+							<option value="2">商家</option>
+						</select>
+					 </div>
+					 <!-- <div>
+						 <span>邮箱地址</span>
+						 <input type="text">
+					 </div> -->
+					 </div>
+				     <div class="col-md-6 register-bottom-grid">
+						    <h3>登录信息</h3>
+							 <div>
+								<span>密码</span>
+								<input type="password" name="password" id="password">
+							 </div>
+							 <div>
+								<span>确认密码</span>
+								<input type="password" name="repassword" id="repassword">
+							 </div>
+
+
+					 </div>
+					 <div class="clearfix"> </div>
+				</form>
+				<div style="text-align:center;margin-top:50px;">
+					<button class="btn tijiao" style="border:0;margin-left:20px;width:100px;height:50px;background-color:#EF5F21;">提交</button>
+				</div>
+			</div>
+</div>
+<script>
+	$(document).ready(function () {
+			$(".tijiao").click(function () {
+					var username = $("#username").val();
+					var idtentify  = $('#supple option:selected').val();
+					var password = $("#password").val();
+					var repassword = $("#repassword").val();
+					var sellers = false;
+					if(password!=repassword){
+						 alert("两次密码不一致！");
+						 window.location.href="http://localhost:9000/register";
+					}else{
+						if(idtentify==1){
+							 sellers = false;
+						}else{
+							 sellers = true;
+						}
+						var data = {
+							"username":username,
+							"password":password,
+							"sellers":sellers
+						}
+						$.ajax({
+								url:"/register",
+								type:"post",
+								data:data,
+								success:function (data) {
+									if(data=="success"){
+										 alert("注册成功！");
+										 window.location.href="/login";
+									}
+								}
+						})
+					}
+
+			})
+	})
+</script>
+
+<!--//content-->
+<div class="footer" style="position:fixed;bottom:0px;width:100%;">
+		<div class="footer-class">
+		<p >Copyright &copy; 2017</p>
+		</div>
+</div>
+</body>
+</html>

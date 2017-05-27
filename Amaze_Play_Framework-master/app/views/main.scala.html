@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>asd</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/fileuploader.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/fileuploader.js")" type="text/javascript"></script>
+   
+    </head>
+    <body>
+    <ul class="aaaa">asdasdasd
+    </ul>
+
+<script>        
+    jQuery(function(){
+        var uploader = new qq.FileUploader({
+            element: document.getElementById('file-uploader'),
+            action: 'upload/',
+            onComplete: function(id, fileName, responseJSON){
+            	console.log($(".aaaa"));
+            	$(".aaaa").append('<li><a href="/service/download/'+fileName+'">Download</a></li>');
+            	return false;
+            },
+        });           
+    });     
+</script>
+        
+    </body>
+</html>

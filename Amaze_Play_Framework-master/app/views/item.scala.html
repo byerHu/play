@@ -1,0 +1,396 @@
+@(item: Commodity,comments: List[Comment],current_user:String)
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signle</title>
+<link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="@routes.Assets.at("javascripts/jquery.min.js")"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="@routes.Assets.at("stylesheets/style.css")" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<!-- start menu -->
+<link href="@routes.Assets.at("stylesheets/memenu.css")" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="@routes.Assets.at("javascripts/memenu.js")"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+
+
+<script src="@routes.Assets.at("javascripts/main.js")"></script>
+<script src="@routes.Assets.at("javascripts/simpleCart.min.js")"> </script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+			<div class="search">
+					<form>
+						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+						<input type="submit" value="Go">
+					</form>
+			</div>
+			<div class="header-left">
+					<ul>
+@if(current_user=="登录"){<li ><a href="/login"  >登录</a></li><li><a  href="/register"  >注册</a></li>}else{<li ><a href="#"  >@current_user</a></li>}
+
+					</ul>
+					<div class="cart box_1">
+						<a href="/checkout">
+						<h3> <div class="total">购物车</div>
+							<img src="@routes.Assets.at("images/cart.png")" alt=""/></h3>
+						</a>
+				<!-- <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
+
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				<div class="logo">
+					<a href="index.html"><img src="@routes.Assets.at("images/logo.png")" alt=""></a>
+				</div>
+		  <div class=" h_menu4">
+					<ul class="memenu skyblue">
+					  <li class="active grid"><a class="color8" href="/">主页</a></li>
+				      <li><a class="color1" href="#">店铺管理</a></li>
+				    <li class="grid"><a class="color2" href="#">后台管理</a></li>
+				<li><a class="color4" href="/blog">所有帖子</a></li>
+				<!-- <li><a class="color6" href="/contact">Conact</a></li> -->
+			  </ul>
+			</div>
+
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+
+	</div>
+
+
+<!--content-->
+<!---->
+		<div class="product">
+			<div class="container">
+				<div class="col-md-3 product-price">
+
+				<div class=" rsidebar span_1_of_left">
+					<div class="of-left">
+						<h3 class="cate">种类</h3>
+					</div>
+		 <ul class="menu">
+		<li class="item1"><a href="#">男 </a>
+			<ul class="cute">
+				<li class="subitem1"><a href="#">Cute Kittens </a></li>
+				<li class="subitem2"><a href="#">Strange Stuff </a></li>
+				<li class="subitem3"><a href="#">Automatic Fails </a></li>
+			</ul>
+		</li>
+		<li class="item2"><a href="#">女 </a>
+			<ul class="cute">
+				<li class="subitem1"><a href="#">Cute Kittens </a></li>
+				<li class="subitem2"><a href="#">Strange Stuff </a></li>
+				<li class="subitem3"><a href="#">Automatic Fails </a></li>
+			</ul>
+		</li>
+		<li class="item3"><a href="#">儿童</a>
+			<ul class="cute">
+				<li class="subitem1"><a href="#">Cute Kittens </a></li>
+				<li class="subitem2"><a href="#">Strange Stuff </a></li>
+				<li class="subitem3"><a href="#">Automatic Fails</a></li>
+			</ul>
+		</li>
+
+	</ul>
+					</div>
+				<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+
+			});
+		</script>
+<!---->
+	<div class="product-middle">
+
+					<div class="fit-top">
+						<h6 class="shop-top">Lorem Ipsum</h6>
+						<a href="#" class="shop-now">SHOP NOW</a>
+<div class="clearfix"> </div>
+	</div>
+				</div>
+						<div class="sellers">
+							<div class="of-left-in">
+								<h3 class="tag">标签</h3>
+							</div>
+								<div class="tags">
+									<ul>
+										<li><a href="#">design</a></li>
+										<li><a href="#">fashion</a></li>
+										<li><a href="#">lorem</a></li>
+										<li><a href="#">dress</a></li>
+										<li><a href="#">fashion</a></li>
+										<li><a href="#">dress</a></li>
+										<li><a href="#">design</a></li>
+										<li><a href="#">dress</a></li>
+										<li><a href="#">design</a></li>
+										<li><a href="#">fashion</a></li>
+										<li><a href="#">lorem</a></li>
+										<li><a href="#">dress</a></li>
+
+										<div class="clearfix"> </div>
+									</ul>
+
+								</div>
+
+		</div>
+				<!---->
+				<div class="product-bottom">
+					<div class="of-left-in">
+								<h3 class="best">热卖商品</h3>
+							</div>
+					<div class="product-go">
+						<div class=" fashion-grid">
+									<a href="#"><img class="img-responsive" src="@routes.Assets.at("images/p1.jpg")" alt=""></a>
+
+								</div>
+							<div class=" fashion-grid1">
+								<h6 class="best2"><a href="#" >Lorem ipsum dolor sit
+amet consectetuer  </a></h6>
+
+								<span class=" price-in1"> $40.00</span>
+							</div>
+
+							<div class="clearfix"> </div>
+							</div>
+							<div class="product-go">
+						<div class=" fashion-grid">
+									<a href="#"><img class="img-responsive " src="@routes.Assets.at("images/p2.jpg")" alt=""></a>
+
+								</div>
+							<div class="fashion-grid1">
+								<h6 class="best2"><a href="#" >Lorem ipsum dolor sit
+amet consectetuer </a></h6>
+
+								<span class=" price-in1"> $40.00</span>
+							</div>
+
+							<div class="clearfix"> </div>
+							</div>
+
+				</div>
+
+				</div>
+				<div class="col-md-9 product-price1">
+				<div class="col-md-5 single-top">
+			<div class="flexslider">
+  <ul class="slides">
+      <img style="width:320px" src="@routes.Assets.at("uploads/commodity_")@item.commodityId" />
+
+  </ul>
+</div>
+<!-- FlexSlider -->
+  <script defer src="@routes.Assets.at("javascripts/jquery.flexslider.js")"></script>
+<link rel="stylesheet" href="@routes.Assets.at("stylesheets/flexslider.css")" type="text/css" media="screen" />
+
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+					</div>
+					<div class="col-md-7 single-top-in simpleCart_shelfItem">
+						<div class="single-para ">
+						<h4>@item.commodityName</h4>
+
+
+							<h5 class="item_price">$ @item.price</h5>
+							<p>评论</p>
+							<div class="available">
+								<ul>
+									<li>Color
+										<select>
+										<option>Silver</option>
+										<option>Black</option>
+										<option>Dark Black</option>
+										<option>Red</option>
+									</select></li>
+								<li class="size-in">Size<select>
+									<option>Large</option>
+									<option>Medium</option>
+									<option>small</option>
+									<option>Large</option>
+									<option>small</option>
+								</select></li>
+								<div class="clearfix"> </div>
+							</ul>
+						</div>
+							<ul class="tag-men">
+								<li><span>TAG</span>
+								<span class="women1">: Women,</span></li>
+								<li><span>SKU</span>
+								<span class="women1">: CK09</span></li>
+							</ul>
+
+							数量：<input id="number" type="text" value="1">
+								<a id="addcart" href="#" class="add-cart item_add">加入购物车</a>
+
+						</div>
+					</div>
+				<div class="clearfix"> </div>
+			<!---->
+					<div class="cd-tabs">
+			<nav>
+				<ul class="cd-tabs-navigation">
+					<li><a data-content="fashion"  href="#0">商品描述 </a></li>
+					<li><a data-content="cinema" href="#0" >更多信息</a></li>
+					<li><a data-content="television" href="#0" class="selected ">评论 (1)</a></li>
+
+				</ul>
+			</nav>
+	<ul class="cd-tabs-content">
+		<li data-content="fashion" >
+		<div class="facts">
+									  <p > fwer4jgfireik</p>
+										<ul>
+											<li>Research</li>
+											<li>Design and Development</li>
+											<li>Porting and Optimization</li>
+											<li>System integration</li>
+											<li>Verification, Validation and Testing</li>
+											<li>Maintenance and Support</li>
+										</ul>
+							        </div>
+
+</li>
+<li data-content="cinema" >
+		<div class="facts1">
+
+						<div class="color"><p>Color</p>
+							<span >Blue, Black, Red</span>
+							<div class="clearfix"></div>
+						</div>
+						<div class="color">
+							<p>Size</p>
+							<span >S, M, L, XL</span>
+							<div class="clearfix"></div>
+						</div>
+
+			 </div>
+
+</li>
+<li data-content="television" class="selected">
+	<div class="comments-top-top">
+	    		    @for(comment <- comments){
+				<div class="top-comment-left">
+					<img class="img-responsive" src="@routes.Assets.at("images/co.png")" alt="">
+				</div>
+				<div class="top-comment-right">
+					<h6><a href="#">@comment.user</a> - @comment.time</h6>
+					<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									<p>@comment.content</p>
+				</div>
+				}
+				<a id="disscus" class="add-re" href="#">添加评论</a>
+			</div>
+<form>
+    <input type="hidden" id="title" name="title" value="@item.commodityId">
+    <textarea cols="77" rows="6" value=" " id="content" name="content" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Discuss';}"></textarea>
+</form>
+</li>
+
+<script>
+	$(document).ready(function () {
+		$("#disscus").click(function () {
+			var title = $("#title").val();
+			var content = $("#content").val();
+			var data = {
+				"commodityId":title,
+				"content":content
+			}
+			if(content != "Discuss" && content != ""){
+			$.ajax({
+					url:"/discuss",
+					type:"post",
+					data:data,
+					success:function (data) {
+					    if(data=="success")
+					        location.reload() 
+					}
+			})
+			}
+		})
+
+
+	})
+	$(document).ready(function () {
+		$("#addcart").click(function () {
+			var title = $("#title").val();
+			var content = $("#number").val();
+			var data = {
+				"id":title,
+				"num":content
+			}
+			$.ajax({
+					url:"/addcart",
+					type:"get",
+					data:data,
+					success:function (data) {
+                        if(data=="success")
+                            alert("添加成功");
+					}
+			})
+		})
+
+	})
+</script>
+				
+
+<div class="clearfix"></div>
+	</ul>
+</div>
+
+</div>
+
+		</div>
+		</div>
+<!--//content-->
+<div class="footer">
+		<div class="footer-class">
+		<p >Copyright &copy; 2017</p>
+		</div>
+</div>
+</body>
+</html>
